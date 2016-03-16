@@ -1,3 +1,23 @@
-<h2>About VocabTrainer</h2>
+<div class="trainer-main well col-lg-10">
+    <div class="trainer-question">
+        <h2>{{flashCard.question}}<h2>
+    </div>
+    <div class="trainer-answer">
+        <div class="form-group">
+            <textarea class="trainer-answer-textarea form-control" rows="6"></textarea>
+        </div>
+        <div class="form-group">
+            <div class = "col-lg-offset-3 col-lg-3">
+                <button ng-click="later(flashCard)" class=" btn btn-lg btn-info btn-block">Accept</button>
+            </div>
+            <div class = " col-lg-3">
+                <button ng-click="seeAnswer()" class=" btn btn-lg btn-info btn-block">Next</button>
+            </div>
+        </div>
+    </div>
+    <div class="container trainer-answer-correct">
+        <p ng-show="displayAnswer">{{ flashCard.answer }}</p>
+    </div>
+</div>
 
-<p>Inspired by Anki, a spaced-repitition flash card system.</p>
+

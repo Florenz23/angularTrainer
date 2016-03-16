@@ -19,7 +19,10 @@ module.exports = function(config) {
       'bower_components/lodash/lodash.js',
       'views/*.html',
       'js/app.js',
-      'js/*.js',
+      'js/routes.js',
+      'js/controllers/*.js',
+      'js/directives/*.js',
+      'js/services/*.js',
       'test/unit/*.js'
     ],
 

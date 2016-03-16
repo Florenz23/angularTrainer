@@ -1,34 +1,52 @@
 <!--https://github.com/mrjamesriley/vocab-trainer-->
 
 <!doctype html>
-<html ng-app="vocabTrainerApp">
-  <head>
+<html ng-app="vocabTrainer">
+<head>
     <title>VocabTrainer</title>
     <link href="bower_components/bootstrap/dist/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css"/>
     <link href="css/style.sass" media="screen" rel="stylesheet" type="text/css"/>
+    <link href="css/trainer.css" media="screen" rel="stylesheet" type="text/css"/>
 
-  </head>
-  <body ng-controller="ShellController">
+</head>
+<body ng-controller="ShellController">
+<div class="container">
+
 
     <h1><a href="#/">VocabTrainer</a></h1>
 
     <ul class="nav nav-tabs" style="margin-bottom: 20px">
-      <li ng-class="{ active: isActiveTab('words') }"><a href="#/">Words</a><li>
-      <li ng-class="{ active: isActiveTab('trainer') }"><a href="#/trainer">Trainer</a><li>
-      <li ng-class="{ active: isActiveTab('about') }"><a href="#/about">About</a><li>
+        <li ng-class="{ active: isActiveTab('words') }"><a href="#/">Words</a>
+        <li>
+        <li ng-class="{ active: isActiveTab('trainer') }"><a href="#/trainer">Trainer</a>
+        <li>
+        <li ng-class="{ active: isActiveTab('about') }"><a href="#/about">About</a>
+        <li>
     </ul>
 
     <ng-view></ng-view>
+</div>
 
 
-    <script src='./bower_components/angular/angular.js'></script>
-    <script src='./bower_components/angular-route/angular-route.js'></script>
-    <script src='./bower_components/lodash/lodash.js'></script>
+<script src='./bower_components/angular/angular.js'></script>
+<script src='./bower_components/angular-route/angular-route.js'></script>
+<script src='./bower_components/lodash/lodash.js'></script>
 
-    <script src='./js/app.js'></script>
-    <script src='./js/services.js'></script>
+<script src='./js/app.js'></script>
+<script src='./js/routes.js'></script>
 
-    <!-- livereload snippet to avoid having to enable the browser extention -->
-    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
-  </body>
+<!--Services-->
+<script src='js/services/services.js'></script>
+
+
+<!--Controller-->
+<script src='js/controllers/about-controller.js'></script>
+<script src='js/controllers/main-controller.js'></script>
+<script src='js/controllers/shell-controller.js'></script>
+<script src='js/controllers/trainer-controller.js'></script>
+<script src='js/controllers/word-controller.js'></script>
+
+<!-- livereload snippet to avoid having to enable the browser extention -->
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
 </html>

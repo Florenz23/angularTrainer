@@ -1,0 +1,23 @@
+
+
+.trainer-main{
+}
+
+
+
+.trainer-question{
+    text-align:center;
+    height: 250px;
+}
+.trainer-answer {
+    height: 200px;
+}
+.trainer-answer-textarea{
+    resize:none;
+}
+
+.trainer-answer-correct {
+    color:red;
+    font-size: 20px;
+    padding : 40px;
+}

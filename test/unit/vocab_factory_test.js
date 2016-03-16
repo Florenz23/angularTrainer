@@ -1,57 +1,57 @@
 describe('Vocab Factory', function() {
 
-  beforeEach(module('vocabTrainerApp'));
+  beforeEach(module('vocabTrainer'));
 
   var Vocab;
 
   beforeEach(inject(function($injector) {
     Vocab = $injector.get('Vocab');
-    Vocab._words = [
-      { word: 'Banana' },
-      { word: 'Apple' },
-      { word: 'Plum' },
-      { word: 'Grape', definition: 'A berry growing in clusters on a grapevine' },
-      { word: 'Orange' },
-      { word: 'Pear' }
+    Vocab._flashCards = [
+      { question: 'Banana' },
+      { question: 'Apple' },
+      { question: 'Plum' },
+      { question: 'Grape', answer: 'A berry growing in clusters on a grapevine' },
+      { question: 'Orange' },
+      { question: 'Pear' }
     ];
   }));
 
-  describe('nextWord', function() {
-    it('should retrieve the next word in the list', function() {
-      Vocab.currentWord = Vocab.wordByName('Plum');
-      expect(Vocab.nextWord().word).toEqual('Grape');
+  describe('nextFlashCard', function() {
+    it('should retrieve the next flasCard in the list', function() {
+      Vocab.currentFlashCard = Vocab.wordByName('Plum');
+      expect(Vocab.nextFlashCard().question).toEqual('Grape');
     });
 
     it('should return to the start of the list once the end is reached', function() {
-      Vocab.currentWord = Vocab.wordByName('Pear');
-      expect(Vocab.nextWord().word).toEqual('Banana');
+      Vocab.currentFlashCard = Vocab.wordByName('Pear');
+      expect(Vocab.nextFlashCard().question).toEqual('Banana');
     });
   });
 
   describe('markForLater', function() {
-    it('should place the word to the back of the word list', function() {
-      Vocab.markForLater(Vocab.words()[0]);
-      expect(_.last(Vocab.words())).toEqual({ word: 'Banana' });
+    it('should place the flashCard to the back of the flashCard list', function() {
+      Vocab.markForLater(Vocab.flashCards()[0]);
+      expect(_.last(Vocab.flashCards())).toEqual({ question: 'Banana' });
     });
   });
 
   describe('markForSoon', function() {
-    it('should place the word to the middle of the word list', function() {
-      Vocab.markForSoon(Vocab.words()[0]);
-      expect(Vocab.words()[2]).toEqual({ word: 'Banana' });
+    it('should place the flashCard to the middle of the flashCard list', function() {
+      Vocab.markForSoon(Vocab.flashCards()[0]);
+      expect(Vocab.flashCards()[2]).toEqual({ question: 'Banana' });
     });
   });
 
   describe('wordByName', function() {
-    it('retrieve the Word object for a given word', function() {
-      expect(Vocab.wordByName('Grape').definition).toEqual('A berry growing in clusters on a grapevine');
+    it('retrieve the FlashCard object for a given flashCard', function() {
+      expect(Vocab.wordByName('Grape').answer).toEqual('A berry growing in clusters on a grapevine');
     });
   });
 
-  describe('trashWord', function() {
-    it('remove a Word object from the words list', function() {
-      var word = Vocab.wordByName('Apple');
-      Vocab.trashWord(word);
+  describe('trashFlashCard', function() {
+    it('remove a FlashCard object from the flashCards list', function() {
+      var flashCard = Vocab.wordByName('Apple');
+      Vocab.trashFlashCard(flashCard);
       expect(Vocab.wordByName('Apple')).toEqual(undefined);
     });
   });
