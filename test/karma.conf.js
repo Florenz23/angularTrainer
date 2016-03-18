@@ -13,11 +13,14 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'js/vendor/jquery.js',
+      'js/vendor/jasmine-jquery.js',
       'bower_components/angular/angular.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/angular-route/angular-route.js',
       'bower_components/lodash/lodash.js',
       'views/*.html',
+      'js/classes/*.js',
       'js/app.js',
       'js/routes.js',
       'js/controllers/*.js',
