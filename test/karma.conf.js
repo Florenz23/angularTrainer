@@ -16,6 +16,7 @@ module.exports = function(config) {
       'js/vendor/jquery.js',
       'js/vendor/jasmine-jquery.js',
       'bower_components/angular/angular.js',
+      'bower_components/angular-ui-event/dist/event.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/angular-route/angular-route.js',
       'bower_components/lodash/lodash.js',

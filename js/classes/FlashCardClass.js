@@ -10,7 +10,7 @@ function ClassFlashCard(flashCardObject) {
     this.poolStatus = this.setStartPoolStatus(flashCardObject.poolStatus);
 }
 ClassFlashCard.prototype.setStartPoolStatus = function (poolStatus) {
-    var start_pool_status = -1;
+    var start_pool_status = 1;
     var newPoolStatus;
     if (poolStatus == undefined){
         newPoolStatus = start_pool_status;

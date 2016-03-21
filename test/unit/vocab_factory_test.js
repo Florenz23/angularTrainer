@@ -59,6 +59,11 @@ describe('Vocab Factory', function () {
             Vocab.currentFlashCard = Vocab.wordByName('Pear5');
             expect(Vocab.nextFlashCard().question).toEqual('Banana');
         });
+        it('should update currentFlashCard', function () {
+            expect(Vocab.currentFlashCard.question).toEqual('Banana');
+            Vocab.nextFlashCard();
+            expect(Vocab.currentFlashCard.question).toEqual('Apple');
+        });
     });
 
     describe('markForLater', function () {
@@ -72,8 +77,15 @@ describe('Vocab Factory', function () {
         it('should place the flashCard to the [poolsize] posotion of the flashCard list', function () {
             var pool_size = 3;
             Vocab.setPoolsize(pool_size);
-            Vocab.markForSoon(Vocab.flashCards()[0]);
+            expect(Vocab.flashCards()[0].question).toEqual('Banana');
+            Vocab.markForSoon();
             expect(Vocab.flashCards()[pool_size].question).toEqual('Banana');
+            expect(Vocab.flashCards()[0].question).toEqual('Apple');
+        });
+        it('current flash card should be updated', function () {
+            expect(Vocab.currentFlashCard.question).toEqual('Banana');
+            Vocab.markForSoon();
+            expect(Vocab.currentFlashCard.question).toEqual('Apple');
         });
     });
     describe('markForReview', function () {
@@ -88,6 +100,11 @@ describe('Vocab Factory', function () {
             expect(Vocab.flashCards()[review_position].question).toEqual('Banana');
             expect(Vocab.flashCards()[0].question).toEqual('Apple');
         });
+        it('current flash card should be updated', function () {
+            expect(Vocab.currentFlashCard.question).toEqual('Banana');
+            Vocab.markForReview();
+            expect(Vocab.currentFlashCard.question).toEqual('Apple');
+        });
     });
 
     describe('wordByName', function () {
@@ -98,9 +115,13 @@ describe('Vocab Factory', function () {
 
     describe('trashFlashCard', function () {
         it('remove a FlashCard object from the flashCards list', function () {
-            var flashCard = Vocab.wordByName('Apple');
-            Vocab.trashFlashCard(flashCard);
-            expect(Vocab.wordByName('Apple')).toEqual(undefined);
+            Vocab.trashFlashCard();
+            expect(Vocab.wordByName('Banana')).toEqual(undefined);
+        });
+        it('current flash card should be updated', function () {
+            expect(Vocab.currentFlashCard.question).toEqual('Banana');
+            Vocab.trashFlashCard();
+            expect(Vocab.currentFlashCard.question).toEqual('Apple');
         });
     });
     describe('Check answer ok value', function () {
@@ -141,7 +162,6 @@ describe('Vocab Factory', function () {
             Vocab.currentFlashCard = flashCard;
             Vocab.markAnswerAsCorrect();
             expect(flashCard.poolStatus).toEqual(1);
-            ;
             expect(Vocab.markForReview).toHaveBeenCalled();
             expect(Vocab.flashCards()[review_position].question).toEqual('Apple');
         });
@@ -210,8 +230,8 @@ describe('Vocab Factory', function () {
                 expect(Vocab.markAnswerAsCorrect).toHaveBeenCalled();
             });
             it('display answer should be false', function () {
-                Vocab.checkAnswer("Banane");
-                expect(Vocab.displayAnswer).toEqual(false);
+                var displayAnswer = Vocab.checkAnswer("Banane");
+                expect(displayAnswer).toEqual(false);
                 ;
             });
             it('after answering correctly the next voc should be displayed', function () {
@@ -223,8 +243,8 @@ describe('Vocab Factory', function () {
         });
         describe('wrong Answer', function () {
             it('should call markAnswerAsWrong', function () {
-                Vocab.checkAnswer("Amenaa!!!");
-                expect(Vocab.displayAnswer).toEqual(true);
+                var displayAnswer = Vocab.checkAnswer("Amenaa!!!");
+                expect(displayAnswer).toEqual(true);
             });
             it('after answering wrongly the same card should be displayed', function () {
                 expect(Vocab.currentFlashCard.question).toEqual('Banana');
@@ -233,35 +253,21 @@ describe('Vocab Factory', function () {
                 ;
             });
         });
+        describe('delete known flashCards from list', function () {
+            it('first flash card should be deleted after answered correctly', function () {
+                Vocab.markAnswerAsCorrect();
+                expect(Vocab.wordByName('Banana')).toEqual(undefined);
+            });
+            it('flashCard without rating should be delted from list after answered correctly', function () {
+                Vocab.nextFlashCard();
+                Vocab.nextFlashCard();
+                Vocab.nextFlashCard();
+                expect(Vocab.currentFlashCard.question).toEqual('Grape');
+                Vocab.markAnswerAsCorrect();
+                expect(Vocab.wordByName('Grape')).toEqual(undefined);
+            });
+        });
 
-    });
-    xdescribe('display FlashCard', function () {
-        describe('correct answer', function () {
-            it('display solution should be false', function () {
-                expect(Vocab.displaySolution).toEqual(false);
-                ;
-            });
-            it('after answering correctly the next voc should be displayed', function () {
-                expect(Vocab.currentFlashCard.question).toEqual('Banana');
-                Vocab.checkAnswer("Banane");
-                expect(Vocab.currentFlashCard.question).toEqual('Apple');
-                expect(Vocab.displayAnswer).toEqual(false);
-                ;
-            });
-        });
-        describe('wrong answer', function () {
-            it('display solution should be false', function () {
-                expect(Vocab.displayAnswer).toEqual(false);
-                ;
-            });
-            it('after answering wrongly the solution should be displayed and the buttons changed', function () {
-                expect(Vocab.currentFlashCard.question).toEqual('Banana');
-                Vocab.checkAnswer("Amena!!");
-                expect(Vocab.currentFlashCard.question).toEqual('Banana');
-                expect(Vocab.displayAnswer).toEqual(true);
-                ;
-            });
-        });
     });
 })
 ;

@@ -1,4 +1,4 @@
-angular.module('vocabTrainer', ['ngRoute']);
+angular.module('vocabTrainer', ['ngRoute','ui.event']);
 
 
 

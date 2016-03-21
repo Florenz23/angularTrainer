@@ -2,33 +2,53 @@ angular.module('vocabTrainer')
 
     .factory('Vocab', function () {
 
-        var flashCards = [
+        var dbFlashCards = [
             {
-                question: 'Bacchanalia',
-                answer: 'Drunken celebrations',
+                question: 'one',
+                answer: 'eins',
                 type: 'noun'
             },
             {
-                question: 'Nebulous',
-                answer: '(of a concept) vague of ill-defined',
+                question: 'two',
+                answer: 'zwei',
                 type: 'adjective'
             },
             {
-                question: 'Parsimonious',
-                answer: 'Very unwilling to spend money or use resources',
+                question: 'three',
+                answer: 'drei',
                 type: 'Adjective'
             },
             {
-                question: 'Voracious',
-                answer: 'Having a very eager approach to an activity',
+                question: 'four',
+                answer: 'vier',
                 type: 'Adjective'
             },
             {
-                question: 'Verdant',
-                answer: 'Green with grass or other rich vegetation',
+                question: 'a',
+                answer: 'a',
                 type: 'Adjective'
-            }
+            },
+            {
+                question: 'a',
+                answer: 'a',
+                type: 'Adjective'
+            },
+            {
+                question: 'b',
+                answer: 'b',
+                type: 'Adjective'
+            },
+            {
+                question: 'c',
+                answer: 'c',
+                type: 'Adjective'
+            },
         ];
+        var flashCards = new Array();
+        for (var i = 0; i < dbFlashCards.length; i++) {
+            var obj = new ClassFlashCard(dbFlashCards[i]);
+            flashCards.push(obj);
+        }
         var pool_size = 5;
         var review_interval = 5;
 
@@ -40,11 +60,11 @@ angular.module('vocabTrainer')
                 this.displayAnswer = false;
             },
             currentFlashCard: null,
-            setPoolsize:function(poolSize){
-                this.poolSize =  poolSize;
+            setPoolsize: function (poolSize) {
+                this.poolSize = poolSize;
             },
-            setReviewIntervall:function(reviewIntervall){
-                this.reviewIntervall =  reviewIntervall;
+            setReviewIntervall: function (reviewIntervall) {
+                this.reviewIntervall = reviewIntervall;
             },
             flashCards: function () {
                 return this._flashCards || this.getFlashCards();
@@ -52,10 +72,6 @@ angular.module('vocabTrainer')
             getFlashCards: function () {
                 this._flashCards = flashCards;
                 return this._flashCards;
-            },
-            trashFlashCard: function (flashCard) {
-                this._flashCards.splice(_.indexOf(this._flashCards, flashCard), 1);
-                this.currentFlashCard = _.first(this.flashCards());
             },
             // grab the next flashCard in the list or wrap around to the start
             nextFlashCard: function () {
@@ -73,6 +89,11 @@ angular.module('vocabTrainer')
                     return flashCard.question == name;
                 });
             },
+            trashFlashCard: function () {
+                var flashCard = this.currentFlashCard;
+                this._flashCards.splice(_.indexOf(this._flashCards, flashCard), 1);
+                this.currentFlashCard = _.first(this.flashCards());
+            },
             // simply move flashCard to end of the list
             markForLater: function (flashCard) {
                 var flashCards = this.flashCards();
@@ -80,51 +101,53 @@ angular.module('vocabTrainer')
                 flashCards.push(flashCard);
             },
             // place the flashCard in the middle of the list
-            markForSoon: function (flashCard) {
+            markForSoon: function () {
                 var flashCards = this.flashCards();
+                var flashCard = this.currentFlashCard;
                 flashCards.splice(_.indexOf(flashCards, flashCard), 1);
                 flashCards.splice(parseInt(this.poolSize), 0, flashCard);
+                this.currentFlashCard = _.first(this.flashCards());
             },
-            markForReview: function (flashCard) {
+            markForReview: function () {
+                var flashCard = this.currentFlashCard;
                 var flashCards = this.flashCards();
                 var reviewPosition = this.poolSize + this.reviewIntervall;
                 flashCards.splice(_.indexOf(flashCards, flashCard), 1);
                 flashCards.splice(parseInt(reviewPosition), 0, flashCard);
+                this.currentFlashCard = _.first(this.flashCards());
             },
-            checkAnswer:function(userAnswer){
+            checkAnswer: function (userAnswer) {
                 var flashCard = this.currentFlashCard;
-                if (flashCard.answer == userAnswer){
+                var displayAnswer = false;
+                if (flashCard.answer == userAnswer) {
                     this.markAnswerAsCorrect();
-                    this.displayAnswer = false;
                 }
-                if (flashCard.answer != userAnswer){
-                    this.displayAnswer = true;
+                if (flashCard.answer != userAnswer) {
+                    displayAnswer = true;
                 }
+                return displayAnswer;
             },
-            markAnswerAsCorrect:function(){
+            markAnswerAsCorrect: function () {
                 var flashCard = this.currentFlashCard;
-                if(flashCard.poolStatus == 1){
+                if (flashCard.poolStatus == 1) {
                     this.trashFlashCard(flashCard)
                     flashCard.markAsCorrectAnswered();
                 }
-                if(flashCard.poolStatus == 0){
+                if (flashCard.poolStatus == 0) {
                     this.markForReview(flashCard)
                     flashCard.markAsCorrectAnswered();
                 }
-                if(flashCard.poolStatus == -1){
+                if (flashCard.poolStatus == -1) {
                     this.markForSoon(flashCard)
                     flashCard.markAsCorrectAnswered();
                 }
 
             },
-            markAnswerAsWrong:function(){
+            markAnswerAsWrong: function () {
                 var flashCard = this.currentFlashCard;
-                    flashCard.markAsWrongAnswered();
-                    this.markForSoon(flashCard);
+                flashCard.markAsWrongAnswered();
+                this.markForSoon(flashCard);
             },
-            test:function(){
-                return "jo";
-            }
         }
 
         Vocab.init();

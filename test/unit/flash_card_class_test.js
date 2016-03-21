@@ -25,7 +25,7 @@ describe('FlashCard Factory', function () {
             expect(flashCard.checkPoolStatus).toBeDefined();
         });
         it('check poolStatus ', function () {
-            expect(flashCard.poolStatus).toEqual(-1);
+            expect(flashCard.poolStatus).toEqual(1);
             ;
         });
     });

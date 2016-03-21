@@ -1,17 +1,26 @@
 <div class="trainer-main well col-lg-10">
     <div class="trainer-question">
-        <h2>{{flashCard.question}}<h2>
+        <h2>{{flashCard.question}}</h2>
     </div>
     <div class="trainer-answer">
         <div class="form-group">
-            <textarea class="trainer-answer-textarea form-control" rows="6"></textarea>
+            <textarea id="user_answer" ng-model="userAnswer" ui-event="{keyup:'keyUpCheckAnswer(userAnswer)'}" class="trainer-answer-textarea form-control"
+                      rows="6"></textarea>
         </div>
-        <div class="form-group">
-            <div class = "col-lg-offset-3 col-lg-3">
-                <button ng-click="later(flashCard)" class=" btn btn-lg btn-info btn-block">Accept</button>
+        <div ng-show="displayAnswer" class="form-group">
+            <div class="col-lg-offset-3 col-lg-3">
+                <button ng-click="acceptAnswer()" class=" btn btn-lg btn-info btn-block">Accept</button>
             </div>
-            <div class = " col-lg-3">
-                <button ng-click="seeAnswer()" class=" btn btn-lg btn-info btn-block">Next</button>
+            <div class=" col-lg-3">
+                <button ng-click="denyAnswer()" class=" btn btn-lg btn-info btn-block">Next</button>
+            </div>
+        </div>
+        <div ng-hide="displayAnswer" class="form-group">
+            <div class="col-lg-offset-3 col-lg-3">
+                <button ng-click="showAnswer()" class=" btn btn-lg btn-info btn-block">Antwort zeigen</button>
+            </div>
+            <div class=" col-lg-3">
+                <button ng-click="checkAnswer()" class=" btn btn-lg btn-info btn-block">Check</button>
             </div>
         </div>
     </div>
@@ -19,5 +28,7 @@
         <p ng-show="displayAnswer">{{ flashCard.answer }}</p>
     </div>
 </div>
+
+
 
 
