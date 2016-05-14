@@ -1,0 +1,1013 @@
+@charset "UTF-8";
+
+.quizzler-modal {
+    background-color: #707d85;
+}
+.quizzler {
+    font-family: 'Roboto', 'PT Sans', sans-serif;
+    font-weight: 300;
+    color: #95a5a6;å
+
+}
+.quizzler h1,
+.quizzler h2,
+.quizzler h3,
+.quizzler h4,
+.quizzler h5,
+.quizzler h6 {
+    font-family: 'Roboto', 'PT Sans', sans-serif;
+    font-weight: 300;
+}
+.quizzler .login-section,
+.quizzler .forgot-password-section {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+}
+.quizzler .login-content,
+.quizzler .forgot-password-section,
+.quizzler .reg-content {
+    background-color: white;
+    -o-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+
+.quizzler .quiz-title {
+    padding: 10px 20px;
+    color: #1e347b;
+}
+
+.quizzler .quiz-title h1,
+.quizzler .scoring-title h1  {
+    font-size : 1.6em;
+}
+
+
+.quizzler .quiz-section,
+.quizzler .scoring-section {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.quizzler .question-content {
+    background-color: white;
+    -o-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+
+.quizzler .section-title {
+    padding: 10px 20px;
+    color: #1e347b;
+}
+.quizzler .section-title h3 {
+    color: #3498db;
+}
+.quizzler .textbox-wrap {
+    padding: 5px 20px 20px 15px;
+    border-left: 5px solid transparent;
+    -moz-transition: border-left-color 0.5s, box-shadow 0.5s, background-color 0.5s;
+    -o-transition: border-left-color 0.5s, box-shadow 0.5s, background-color 0.5s;
+    -webkit-transition: border-left-color 0.5s, box-shadow 0.5s, background-color 0.5s;
+    transition: border-left-color 0.5s, box-shadow 0.5s, background-color 0.5s;
+}
+.quizzler .textbox-wrap .input-group {
+    border: 1px solid #e0e0e0;
+    background-color: #ffffff;
+}
+.quizzler .textbox-wrap .input-group .input-group-addon,
+.quizzler .textbox-wrap .input-group input,
+.quizzler .textbox-wrap .input-group .form-control {
+    background-color: transparent;
+    border: none;
+}
+
+
+.quizzler .textbox-wrap .input-group input,
+.quizzler .textbox-wrap .input-group .form-control,
+.quizzler .textbox-wrap .input-group input:focus,
+.quizzler .textbox-wrap .input-group .form-control:focus {
+    box-shadow: none;
+    outline: none;
+}
+.quizzler .textbox-wrap .input-group [class^="icon-"],
+.quizzler .textbox-wrap .input-group [class*=" icon-"],
+.quizzler .textbox-wrap .input-group i {
+    color: #cccccc;
+}
+.quizzler .textbox-wrap.focused {
+    border-left-color: #3498db;
+    background-color: #f0f0f0;
+    -o-box-shadow: inset 0 0 3px rgba(0,0,0,.1);
+    -ms-box-shadow: inset 0 0 3px rgba(0,0,0,.1);
+    -moz-box-shadow: inset 0 0 3px rgba(0,0,0,.1);
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.1);
+    box-shadow: inset 0 0 3px rgba(0,0,0,.1);
+}
+.quizzler .green-btn,
+.quizzler .green-btn:hover,
+.quizzler .blue-btn {
+    background-color: #2ecc71;
+    border: none;
+}
+.quizzler .blue-btn,
+.quizzler .blue-btn:hover {
+    background-color: #2980b9;
+}
+.quizzler .login-form-action {
+    padding: 5px 20px 15px 20px;
+}
+.quizzler input[type="checkbox"] {
+    width: 30px;
+}
+.quizzler .blue {
+    color: #3498db;
+}
+
+.quizzler .red {
+    color: #920b11;
+}
+
+.quizzler .green {
+    color: #2ecc71;
+}
+.quizzler .login-form-links {
+    padding: 15px;
+    margin-top: 15px;
+    -o-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    -ms-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    background-color: white;
+}
+.quizzler .login-form-links a.blue:hover,
+.quizzler .login-form-links a a.blue:focus {
+    color: #3498db;
+    text-decoration: underline;
+}
+.quizzler .login-form-links a.green:hover,
+.quizzler .login-form-links a a.green:focus {
+    color: #2ecc71;
+    text-decoration: underline;
+}
+.quizzler .forget-form-action {
+    padding: 20px;
+}
+.quizzler .registration-form-section {
+    max-width: 620px;
+    margin: 0 auto;
+    width: 100%;
+}
+.quizzler .reg-header {
+    -o-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.quizzler .registration-left-section {
+    padding-left: 0;
+    padding-right: 2.5px;
+}
+.quizzler .registration-right-section {
+    padding-left: 2.5px;
+    padding-right: 0;
+}
+.quizzler .reg-content {
+    margin-top: 5px;
+    padding: 20px 0;
+}
+.quizzler .registration-form-action {
+    margin-top: 5px;
+    padding: 20px;
+    -o-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    background-color: white;
+}
+.quizzler .custom-checkbox {
+    float: left;
+}
+.quizzler .checkbox {
+    display: inline-block;
+    padding-left: 1px;
+    margin-top: 7px;
+    margin-bottom: 0;
+}
+.quizzler .checkbox-text {
+    line-height: 24px;
+    padding-left: 5px;
+}
+.quizzler .form-control:-moz-placeholder {
+    font-weight: 300;
+}
+.quizzler .form-control::-moz-placeholder {
+    font-weight: 300;
+}
+.quizzler .form-control:-ms-input-placeholder {
+    font-weight: 300;
+}
+.quizzler .form-control::-webkit-input-placeholder {
+    font-weight: 300;
+}
+.quizzler.dark,
+.quizzler .dark {
+    color: #ffffff;
+}
+.quizzler.dark .checkbox,
+.quizzler .dark .checkbox {
+    margin-left: -7px;
+}
+.quizzler.dark .checkbox .checkbox-text,
+.quizzler .dark .checkbox .checkbox-text {
+    line-height: 28px;
+}
+.quizzler.dark .form-control,
+.quizzler .dark .form-control {
+    color: white;
+}
+.quizzler.dark .form-control:-moz-placeholder,
+.quizzler .dark .form-control:-moz-placeholder {
+    color: #959595;
+}
+.quizzler.dark .form-control::-moz-placeholder,
+.quizzler .dark .form-control::-moz-placeholder {
+    color: #959595;
+}
+.quizzler.dark .form-control:-ms-input-placeholder,
+.quizzler .dark .form-control:-ms-input-placeholder {
+    color: #959595;
+}
+.quizzler.dark .form-control::-webkit-input-placeholder,
+.quizzler .dark .form-control::-webkit-input-placeholder {
+    color: #959595;
+}
+.quizzler.dark .login-content,
+.quizzler .dark .login-content,
+.quizzler.dark .forgot-password-section,
+.quizzler .dark .forgot-password-section,
+.quizzler.dark .reg-content,
+.quizzler .dark .reg-content {
+    background-color: #464646;
+}
+.quizzler.dark .section-title,
+.quizzler .dark .section-title {
+    background-color: #464646;
+}
+.quizzler.dark .section-title h3,
+.quizzler .dark .section-title h3 {
+    color: #34dbce;
+}
+.quizzler.dark .textbox-wrap .input-group,
+.quizzler .dark .textbox-wrap .input-group {
+    border: 1px solid #464646;
+    background-color: #383838;
+}
+.quizzler.dark .textbox-wrap .input-group [class^="icon-"],
+.quizzler .dark .textbox-wrap .input-group [class^="icon-"],
+.quizzler.dark .textbox-wrap .input-group [class*=" icon-"],
+.quizzler .dark .textbox-wrap .input-group [class*=" icon-"],
+.quizzler.dark .textbox-wrap .input-group i,
+.quizzler .dark .textbox-wrap .input-group i {
+    color: #cccccc;
+}
+.quizzler.dark .textbox-wrap.focused,
+.quizzler .dark .textbox-wrap.focused {
+    border-left: 5px solid #3498db;
+    background-color: #3b3b3b;
+    -o-box-shadow: inset 0 0 3px rgba(0,0,0,.1);
+    -ms-box-shadow: inset 0 0 3px rgba(0,0,0,.1);
+    -moz-box-shadow: inset 0 0 3px rgba(0,0,0,.1);
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.1);
+    box-shadow: inset 0 0 3px rgba(0,0,0,.1);
+}
+.quizzler.dark .icon-color,
+.quizzler .dark .icon-color {
+    color: white;
+}
+.quizzler.dark .input-group-addon1,
+.quizzler .dark .input-group-addon1 {
+    background-color: #2d2d2d;
+    border: none;
+}
+.quizzler.dark .addon,
+.quizzler .dark .addon {
+    border: 1px solid #c5c5c5;
+    background-color: #393939;
+}
+.quizzler.dark .green-btn,
+.quizzler .dark .green-btn,
+.quizzler.dark .green-btn:hover,
+.quizzler .dark .green-btn:hover,
+.quizzler.dark .blue-btn,
+.quizzler .dark .blue-btn {
+    background-color: #ffffff;
+    color: #464646;
+}
+.quizzler.dark .blue-btn,
+.quizzler .dark .blue-btn,
+.quizzler.dark .blue-btn:hover,
+.quizzler .dark .blue-btn:hover {
+    background-color: #ffffff;
+    color: #464646;
+}
+.quizzler.dark .blue,
+.quizzler .dark .blue {
+    color: #34dbce;
+}
+.quizzler.dark .green,
+.quizzler .dark .green {
+    color: #3498db;
+}
+.quizzler.dark .login-form-links,
+.quizzler .dark .login-form-links {
+    background-color: #464646;
+}
+.quizzler.dark .login-form-links a.blue:hover,
+.quizzler .dark .login-form-links a.blue:hover,
+.quizzler.dark .login-form-links a a.blue:focus,
+.quizzler .dark .login-form-links a a.blue:focus {
+    color: #34dbce;
+}
+.quizzler.dark .login-form-links a.green:hover,
+.quizzler .dark .login-form-links a.green:hover,
+.quizzler.dark .login-form-links a a.green:focus,
+.quizzler .dark .login-form-links a a.green:focus {
+    color: #3498db;
+}
+.quizzler.dark .registration-form-action,
+.quizzler .dark .registration-form-action {
+    background-color: #464646;
+}
+.quizzler.dark .checkbox,
+.quizzler .dark .checkbox {
+    margin-top: 4px;
+}
+.quizzler .radio label,
+.quizzler .checkbox label {
+    font-weight: 300;
+}
+.quizzler .icheckbox_polaris,
+.quizzler .iradio_polaris {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 29px;
+    height: 29px;
+    background: url(../img/polaris.png) no-repeat;
+    border: none;
+    cursor: pointer;
+}
+.quizzler .icheckbox_polaris {
+    background-position: 0 0;
+}
+.quizzler .icheckbox_polaris.hover {
+    background-position: -31px 0;
+}
+.quizzler .icheckbox_polaris.checked {
+    background-position: -62px 0;
+}
+.quizzler .icheckbox_polaris.disabled {
+    background-position: -93px 0;
+    cursor: default;
+}
+.quizzler .icheckbox_polaris.checked.disabled {
+    background-position: -124px 0;
+}
+.quizzler .iradio_polaris {
+    background-position: -155px 0;
+}
+.quizzler .iradio_polaris.hover {
+    background-position: -186px 0;
+}
+.quizzler .iradio_polaris.checked {
+    background-position: -217px 0;
+}
+.quizzler .iradio_polaris.disabled {
+    background-position: -248px 0;
+    cursor: default;
+}
+.quizzler .iradio_polaris.checked.disabled {
+    background-position: -279px 0;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5) {
+    .quizzler .icheckbox_polaris,
+    .quizzler .iradio_polaris {
+        background-image: url(../img/polaris@2x.png);
+        -webkit-background-size: 310px 31px;
+        background-size: 310px 31px;
+    }
+}
+.quizzler .icheckbox_square-blue,
+.quizzler .iradio_square-blue {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 22px;
+    height: 22px;
+    background: url(../img/blue.png) no-repeat;
+    border: none;
+    cursor: pointer;
+}
+.quizzler .icheckbox_square-blue {
+    background-position: 0 0;
+}
+.quizzler .icheckbox_square-blue.hover {
+    background-position: -24px 0;
+}
+.quizzler .icheckbox_square-blue.checked {
+    background-position: -48px 0;
+}
+.quizzler .icheckbox_square-blue.disabled {
+    background-position: -72px 0;
+    cursor: default;
+}
+.quizzler .icheckbox_square-blue.checked.disabled {
+    background-position: -96px 0;
+}
+.quizzler .iradio_square-blue {
+    background-position: -120px 0;
+}
+.quizzler .iradio_square-blue.hover {
+    background-position: -144px 0;
+}
+.quizzler .iradio_square-blue.checked {
+    background-position: -168px 0;
+}
+.quizzler .iradio_square-blue.disabled {
+    background-position: -192px 0;
+    cursor: default;
+}
+.quizzler .iradio_square-blue.checked.disabled {
+    background-position: -216px 0;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5) {
+    .quizzler .icheckbox_square-blue,
+    .quizzler .iradio_square-blue {
+        background-image: url(../img/blue@2x.png);
+        -webkit-background-size: 240px 24px;
+        background-size: 240px 24px;
+    }
+}
+@media (max-width: 767px) {
+    .quizzler .registration-left-section {
+        padding-right: 0px;
+    }
+    .quizzler .registration-right-section {
+        padding-left: 0px;
+    }
+}
+@media (max-width: 380px) {
+    .quizzler .blue-btn,
+    .quizzler .green-btn {
+        font-size: .8em;
+    }
+}
+/*#region ScrollBar Styles */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: rgba(113, 112, 107, 0.2);
+}
+::-webkit-scrollbar-thumb:vertical {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-thumb:vertical:hover,
+::-webkit-scrollbar-thumb:horizontal:hover {
+    background: white;
+}
+::-webkit-scrollbar-thumb:horizontal {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+/*#endregion ScrollBar Styles*/
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    background-repeat: no-repeat;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.form-hz-divider {
+    display: block;
+    height: 1px;
+    clear: both;
+}
+.previous-frame,
+.next-frame {
+    position: fixed;
+    z-index: 100;
+    background-color: white;
+    width: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 2em;
+    color: grey;
+    right: 0;
+    display: block;
+    text-decoration: none!important;
+    opacity: .5;
+    -moz-transition-duration: 0.4s;
+    -o-transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+.previous-frame:hover,
+.next-frame:hover {
+    opacity: 1;
+}
+.previous-frame {
+    top: 0;
+    border-radius: 0 0 0 3px;
+}
+.next-frame {
+    bottom: 0;
+    border-radius: 3px 0 0 0;
+}
+.colorBg {
+    padding: 50px 0;
+    min-height: 100%;
+    overflow: hidden;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: relative;
+    -o-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+}
+.colorBg.colorBg1 {
+    background-color: #1abc9c;
+    background-image: -ms-radial-gradient(center top, circle farthest-side, #55e7ca 0%, #1abc9c 100%);
+    background-image: -moz-radial-gradient(center top, circle farthest-side, #55e7ca 0%, #1abc9c 100%);
+    background-image: -o-radial-gradient(center top, circle farthest-side, #55e7ca 0%, #1abc9c 100%);
+    background-image: -webkit-gradient(radial, center top, 0, center top, 487, color-stop(0, #55e7ca), color-stop(1, #1abc9c));
+    background-image: -webkit-radial-gradient(center top, circle farthest-side, #55e7ca 0%, #1abc9c 100%);
+    background-image: radial-gradient(circle farthest-side at center top, #55e7ca 0%, #1abc9c 100%);
+}
+.colorBg.colorBg2 {
+    background-color: #2ecc71;
+    background-image: -ms-radial-gradient(center top, circle farthest-side, #7ee2a8 0%, #2ecc71 100%);
+    background-image: -moz-radial-gradient(center top, circle farthest-side, #7ee2a8 0%, #2ecc71 100%);
+    background-image: -o-radial-gradient(center top, circle farthest-side, #7ee2a8 0%, #2ecc71 100%);
+    background-image: -webkit-gradient(radial, center top, 0, center top, 487, color-stop(0, #7ee2a8), color-stop(1, #2ecc71));
+    background-image: -webkit-radial-gradient(center top, circle farthest-side, #7ee2a8 0%, #2ecc71 100%);
+    background-image: radial-gradient(circle farthest-side at center top, #7ee2a8 0%, #2ecc71 100%);
+}
+.colorBg.colorBg3 {
+    background-color: #3498db;
+    background-image: -ms-radial-gradient(center top, circle farthest-side, #8bc4ea 0%, #3498db 100%);
+    background-image: -moz-radial-gradient(center top, circle farthest-side, #8bc4ea 0%, #3498db 100%);
+    background-image: -o-radial-gradient(center top, circle farthest-side, #8bc4ea 0%, #3498db 100%);
+    background-image: -webkit-gradient(radial, center top, 0, center top, 487, color-stop(0, #8bc4ea), color-stop(1, #3498db));
+    background-image: -webkit-radial-gradient(center top, circle farthest-side, #8bc4ea 0%, #3498db 100%);
+    background-image: radial-gradient(circle farthest-side at center top, #8bc4ea 0%, #3498db 100%);
+}
+.colorBg.colorBg4 {
+    background-color: #9b59b6;
+    background-image: -ms-radial-gradient(center top, circle farthest-side, #c6a0d5 0%, #9b59b6 100%);
+    background-image: -moz-radial-gradient(center top, circle farthest-side, #c6a0d5 0%, #9b59b6 100%);
+    background-image: -o-radial-gradient(center top, circle farthest-side, #c6a0d5 0%, #9b59b6 100%);
+    background-image: -webkit-gradient(radial, center top, 0, center top, 487, color-stop(0, #c6a0d5), color-stop(1, #9b59b6));
+    background-image: -webkit-radial-gradient(center top, circle farthest-side, #c6a0d5 0%, #9b59b6 100%);
+    background-image: radial-gradient(circle farthest-side at center top, #c6a0d5 0%, #9b59b6 100%);
+}
+.colorBg.colorBg5 {
+    background-color: #34dbce;
+    background-image: -ms-radial-gradient(center top, circle farthest-side, #8beae3 0%, #34dbce 100%);
+    background-image: -moz-radial-gradient(center top, circle farthest-side, #8beae3 0%, #34dbce 100%);
+    background-image: -o-radial-gradient(center top, circle farthest-side, #8beae3 0%, #34dbce 100%);
+    background-image: -webkit-gradient(radial, center top, 0, center top, 487, color-stop(0, #8beae3), color-stop(1, #34dbce));
+    background-image: -webkit-radial-gradient(center top, circle farthest-side, #8beae3 0%, #34dbce 100%);
+    background-image: radial-gradient(circle farthest-side at center top, #8beae3 0%, #34dbce 100%);
+}
+.colorBg.colorBg6 {
+    background-color: #95a5a6;
+    background-image: -ms-radial-gradient(center top, circle farthest-side, #ccd4d5 0%, #95a5a6 100%);
+    background-image: -moz-radial-gradient(center top, circle farthest-side, #ccd4d5 0%, #95a5a6 100%);
+    background-image: -o-radial-gradient(center top, circle farthest-side, #ccd4d5 0%, #95a5a6 100%);
+    background-image: -webkit-gradient(radial, center top, 0, center top, 487, color-stop(0, #ccd4d5), color-stop(1, #95a5a6));
+    background-image: -webkit-radial-gradient(center top, circle farthest-side, #ccd4d5 0%, #95a5a6 100%);
+    background-image: radial-gradient(circle farthest-side at center top, #ccd4d5 0%, #95a5a6 100%);
+}
+.colorBg.form-seprator {
+    background-color: #ecf0f1;
+    text-align: center;
+    vertical-align: middle;
+    -o-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    line-height: 1.4em;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.colorBg.form-seprator > i {
+    font-size: 20em;
+    display: inline-block;
+    -moz-transition-duration: 0.4s;
+    -o-transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+@media (max-width: 650px) {
+    .colorBg.form-seprator > i {
+        font-size: 10em;
+    }
+}
+.colorBg.form-seprator h1 {
+    font-size: 4em;
+    line-height: 1.4em;
+}
+@media (max-width: 650px) {
+    .colorBg.form-seprator h1 {
+        font-size: 3em;
+    }
+}
+.i1 {
+    color: #2ecc71;
+}
+.i2 {
+    color: #3498db;
+}
+.i3 {
+    color: #9b59b6;
+}
+.i4 {
+    color: #34dbce;
+}
+.i5 {
+    color: #e67e22;
+}
+.i6 {
+    color: #e74c3c;
+}
+.i7 {
+    color: #5CB85C;
+}
+.i7 > i {
+    font-size: 15em!important;
+    display: inline-block;
+    -moz-transition-duration: 0.4s;
+    -o-transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+@media (max-width: 650px) {
+    .i7 > i {
+        font-size: 10em!important;
+    }
+}
+.i8 {
+    color: #34495e;
+}
+.nf *,
+.nf {
+    font-weight: normal!important;
+}
+.main-nav {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    background-color: white;
+    -moz-transform: translateY(-50%) translateZ(0);
+    -ms-transform: translateY(-50%) translateZ(0);
+    -o-transform: translateY(-50%) translateZ(0);
+    -webkit-transform: translateY(-50%) translateZ(0);
+    transform: translateY(-50%) translateZ(0);
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 3px 0 0 3px;
+    z-index: 500;
+    opacity: .5;
+    -moz-transition-duration: 0.4s;
+    -o-transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+.main-nav:hover {
+    opacity: 1;
+}
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.main-nav ul li {
+    margin: 0;
+    padding: 10px;
+    display: block;
+}
+.main-nav ul li a {
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: grey;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    -o-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+    position: relative;
+    -moz-transition-duration: 0.4s;
+    -o-transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    /*&.active:after {
+                    visibility: visible;
+                    opacity: 1;
+                    .translateX(0);
+                }*/
+
+}
+.main-nav ul li a.active {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.main-nav ul li a:after {
+    content: attr(data-title);
+    background-color: white;
+    right: 350%;
+    top: -50%;
+    position: absolute;
+    display: block;
+    width: 250px;
+    padding: 5px 20px;
+    text-align: center;
+    color: grey;
+    border-radius: 3px;
+    visibility: hidden;
+    opacity: 0;
+    -moz-transform: translateX(-50px);
+    -ms-transform: translateX(-50px);
+    -o-transform: translateX(-50px);
+    -webkit-transform: translateX(-50px);
+    transform: translateX(-50px);
+    -moz-transition-duration: 0.4s;
+    -o-transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    font-weight: normal;
+}
+.main-nav ul li a:hover:after {
+    visibility: visible;
+    opacity: 1;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+.btn-buy {
+    padding: 20px 30px;
+    border-radius: 3px;
+}
+.btn-buy span {
+    background-color: #d9534f;
+    border-radius: 15px;
+    display: inline-block;
+    line-height: 35px;
+    width: 35px;
+}
+@media only screen and (max-width: 1200px) {
+    .main-nav ul li a:after {
+        display: none!important;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .main-nav {
+        display: none;
+    }
+}
+@media only screen and (min-width: 968px) {
+    .no-touch.cssanimations [data-animation] {
+        opacity: 0;
+    }
+}
+
+.login_messsage {
+    height: 15px;
+    padding-bottom: 40px;
+}
+
+.viewport {
+    width : 100%;
+    height: 2500px;
+    background:url("../images/bkgrnd.jpg") repeat-y center 0;
+}
+
+.input-radio {
+    font-size: large;
+    padding-left: 20px;
+    border-style: none;
+}
+
+.radio-label {
+    padding-left: 10px;
+    vertical-align: sub;
+    font-weight: 300;
+}
+
+.quizzler .textbox-wrap .radio-item {
+    padding: 5px 20px 20px 15px;
+}
+
+.quizzler .questions {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.quizzler .challenge {
+    background-color: white;
+    -o-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    margin-bottom : 60px;
+    border-radius: 10px;
+}
+
+.quizzler .challenge .question {
+    padding: 10px 20px;
+    color: #1e347b;
+}
+
+
+.quizzler .challenge .question .details p {
+    padding: 20px 20px;
+    color: #3498db;
+    font-size: 19px;
+    font-weight: 500
+}
+
+.quizzler .challenge .question h3 {
+    color: #3498db;
+    padding-bottom: 15px;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+
+.quizzler .repeat-wrap {
+    padding: 1px 20px 2px 25px;
+    border-left: 5px solid transparent;
+}
+
+
+.quizzler .next-action {
+    padding: 15px 20px 15px 20px;
+}
+
+
+.quizzler .login-section .login_messsage {
+    color: red;
+}
+
+
+/*
+ * **********************************************************************
+ *
+ * CSS for `Quiz Section` view
+ *
+ * **********************************************************************
+ */
+
+.quiz-section header {
+    padding-bottom: 20px;
+}
+
+
+/*
+ * **********************************************************************
+ *
+ * CSS for `Scoring Results` view
+ *
+ * **********************************************************************
+ */
+
+.quizzler .scoring-section {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.scoring-section .score-item {
+    padding: 10px;
+    background-color: rgb(250, 248, 248);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.scoring-section .score-item .question,
+.scoring-section .score-item .question h3 {
+    color: rgb(123, 137, 211);
+    font-size : 18px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.quizzler .scoring-section h1 {
+    margin-top: 0px;
+}
+
+.quizzler .scoring-section .scoring-title {
+    padding-top: 30px;
+    color: #1e347b;
+}
+
+.quizzler .score-results {
+    background-color: #94D9FF;
+    border-radius: 7px;
+    padding: 10px;
+    margin: 30px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px;
+    color: #03080c;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.quizzler .score-results .grade {
+    font-size: 21px;
+    background-color: #FFFB95;
+    padding: 5px;
+    padding-left: 8px;
+    border-radius: 3px;
+    border: 1px solid #c0c0c0;
+}
+
+.score-item .details {
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+.score-item .details p {
+    margin-top: 20px;
+}
+
+.score-item .answer {
+    border-radius: 10px;
+    text-align : left;
+    padding : 20px;
+}
+
+.score-item .answer.incorrect {
+    background-color: #FCE1E1;
+}
+
+.score-item .answer.correct {
+    background-color: #DEFACE;
+}
+
+.scoring-section h2 {
+    font-weight: 100;
+    font-size: 19px;
+    text-align: left;
+    padding-left: 10px;
+    color : #03080c;
+    margin-bottom: 15px;
+    margin-top: 40px;
+}
+
+.score-item .answer .given,
+.score-item .answer .expected {
+
+    font-size: 18px;
+    color: rgb(123, 165, 211);
+
+}
+
+.score-item .answer .given .title,
+.score-item .answer .expected .title {
+
+    color: #03080c;
+    font-size: 18px;
+}

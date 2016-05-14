@@ -51,5 +51,16 @@ angular.module('vocabTrainer').controller('AboutController', function ($scope, V
 
         }
     };
+    $scope.setEnterAction = function (userAnswer) {
+        console.log($scope.displayAnswer);
+        if ($scope.displayAnswer === true) {
+            console.log("deny");
+            return $scope.denyAnswer();
+        }
+        if ($scope.displayAnswer === false) {
+            console.log("check");
+            return $scope.checkAnswer(userAnswer);
+        }
+    }
 });
 

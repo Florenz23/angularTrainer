@@ -17,6 +17,10 @@ angular.module('vocabTrainer')
                 controller: 'TrainerController',
                 templateUrl: 'views/trainer.html'
             }).
+            when('/mc', {
+                controller: 'MultipleChoiceController',
+                templateUrl: 'views/multi_choice.html'
+            }).
             when('/words/:word', {
                 controller: 'WordController',
                 templateUrl: 'views/word.html'

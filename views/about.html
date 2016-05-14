@@ -4,7 +4,8 @@
     </div>
     <div class="trainer-answer">
         <div class="form-group">
-            <textarea id="user_answer" ng-model="userAnswer" ui-event="{keyup:'keyUpCheckAnswer(userAnswer)'}" class="trainer-answer-textarea form-control"
+            <textarea id="user_answer" ng-model="userAnswer" my-enter="setEnterAction(userAnswer)"
+                      my-tab="acceptAnswer()" class="trainer-answer-textarea form-control"
                       rows="6"></textarea>
         </div>
         <div ng-show="displayAnswer" class="form-group">

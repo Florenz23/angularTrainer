@@ -1,0 +1,39 @@
+<div class ="quizzler">
+    <div class="viewport">
+        <div class="quiz-section">
+
+            <header>
+                <div class="quiz-title">
+                    <img src="check/boot/images/g{{startIndex}}f.png" err-src="http://google.com/favicon.ico"/>
+                </div>
+
+            </header>
+
+            <div class="challenge" >
+
+                <div class="question">
+                    <h3>{{ flashCards[startIndex][2][0] }}</h3>
+
+                </div>
+
+                <div ng-repeat="answer in flashCards[startIndex][3]" class="repeat-wrap">
+                    <div class="input-group input-radio">
+                        <input type="radio" name="choice" ng-model="challenge.selected" ng-value="{{ $index }}" id="{{ $index }}">
+                        <label for="{{ $index }}" class="radio-label">{{ answer[1] }}</label>
+                    </div>
+                </div>
+
+                <div class="next-action clearfix">
+                    <button ng-click="next()" class="btn btn-success pull-right blue-btn">Next <i class="icon-chevron-right"></i></button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
