@@ -8,6 +8,7 @@
     <link href="css/style.sass" media="screen" rel="stylesheet" type="text/css"/>
     <link href="css/trainer.css" media="screen" rel="stylesheet" type="text/css"/>
     <link href="css/quizzer.css" media="screen" rel="stylesheet" type="text/css"/>
+    <link href="css/ranji_multi.css" media="screen" rel="stylesheet" type="text/css"/>
     <meta charset="utf-8">
 
 </head>
@@ -26,6 +27,8 @@
         <li>
         <li ng-class="{ active: isActiveTab('mc') }"><a href="#/mc">Boot</a>
         <li>
+        <li ng-class="{ active: isActiveTab('ranji_multi') }"><a href="#/ranji_multi">Ranji Multi</a>
+        <li>
     </ul>
 
     <ng-view></ng-view>
@@ -43,6 +46,7 @@
 
 <!--Classes-->
 <script src='js/classes/FlashCardClass.js'></script>
+<script src='js/classes/MultiChoiceFlashCard.js'></script>
 <!--Directives-->
 <script src='js/directives/err-src.js'></script>
 <script src='js/directives/my-enter.js'></script>
@@ -59,6 +63,7 @@
 <script src='js/controllers/trainer-controller.js'></script>
 <script src='js/controllers/word-controller.js'></script>
 <script src='js/controllers/multi-choice-controller.js'></script>
+<script src='js/controllers/randji-multi-choice-controller.js'></script>
 
 <!-- livereload snippet to avoid having to enable the browser extention -->
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>

@@ -23,17 +23,7 @@ testArray["1003"] = new Array(
         new Array(true, "Antwort3"),
         new Array(false, "Antwort4")));
 fdescribe('boot_test', function () {
-    beforeEach(function () {
-        objArray = [];
-        var counter = "1000";
-        for (var i = 0; i<testArray.length-1002;i++){
-            counter = parseInt(counter);
-            counter++;
-            counter = counter.toString();
-            var obj = new MultiChoiceFlashCard(testArray[counter])
-            objArray[i] = obj;
-        }
-    });
+    objArray = convertTrainerArray(testArray);
     describe('checkArray', function () {
         it('check', function () {
             expect(FA).toBeDefined()
@@ -42,7 +32,7 @@ fdescribe('boot_test', function () {
             var i = "1001";
             i = parseInt(i);
             i++;
-            i= i.toString();
+            i = i.toString();
             expect(testArray[i][2][0]).toEqual("Frage");
             expect(testArray['1002'][3][0][0]).toEqual(true);
             expect(testArray['1002'][3][0][1]).toEqual("Antwort1");
@@ -55,8 +45,26 @@ fdescribe('boot_test', function () {
         it('MultiChoiceFlashCardClass', function () {
             expect(MultiChoiceFlashCard).toBeDefined()
         });
-        it('check parameter', function () {
+        it('check length', function () {
             expect(objArray.length).toEqual(2);
+        });
+        it('check first object', function () {
+            expect(objArray[0]).toBeDefined();
+            expect(objArray[0].question).toBeDefined();
+            expect(objArray[0].question).toEqual("Frage");
+            expect(objArray[0].answer[0].value).toEqual("Antwort1");
+            expect(objArray[0].answer[0].false).toEqual(true);
+            expect(objArray[0].answer[3].false).toEqual(false);
+            expect(objArray[0].id).toEqual(1002);
+        });
+        it('check second object', function () {
+            expect(objArray[1]).toBeDefined();
+            expect(objArray[1].question).toBeDefined();
+            expect(objArray[1].question).toEqual("Frage");
+            expect(objArray[1].answer[0].value).toEqual("Antwort1");
+            expect(objArray[1].answer[0].false).toEqual(true);
+            expect(objArray[1].answer[3].false).toEqual(false);
+            expect(objArray[1].id).toEqual(1003);
         });
 
     });

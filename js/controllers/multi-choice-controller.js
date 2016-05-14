@@ -3,13 +3,13 @@
  */
 
 angular.module('vocabTrainer').controller('MultipleChoiceController', function ($scope, Vocab) {
-    $scope.startIndex = 1001
-    $scope.flashCard = {
-        question: FA[$scope.startIndex][2][0],
-        answerArray :FA[$scope.startIndex][3]
-    };
-    $scope.flashCards = FA;
+    $scope.startIndex = 0;
+    $scope.flashCards = convertTrainerArray(FA);
+    $scope.flashCard = $scope.flashCards[$scope.startIndex];
+    $scope.flashCardCorrect = "jojo";
     $scope.next = function(){
         $scope.startIndex++;
+        $scope.flashCard = $scope.flashCards[$scope.startIndex];
+        console.log($scope.flashCardCorrect);
     }
 });

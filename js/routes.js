@@ -24,6 +24,10 @@ angular.module('vocabTrainer')
             when('/words/:word', {
                 controller: 'WordController',
                 templateUrl: 'views/word.html'
+            }).
+            when('/ranji_multi', {
+                controller: 'QuizController',
+                templateUrl: 'views/ranji_multi.html'
             })
     });
 
