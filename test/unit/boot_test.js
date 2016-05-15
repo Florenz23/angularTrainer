@@ -22,7 +22,7 @@ testArray["1003"] = new Array(
         new Array(true, "Antwort2"),
         new Array(true, "Antwort3"),
         new Array(false, "Antwort4")));
-fdescribe('boot_test', function () {
+describe('boot_test', function () {
     objArray = convertTrainerArray(testArray);
     describe('checkArray', function () {
         it('check', function () {

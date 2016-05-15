@@ -40,7 +40,7 @@ describe('vocabTrainer', function () {
             controller = $controller('AboutController', {
                 '$scope': scope
             });
-            fixture = readFixtures("about.html");
+            //fixture = readFixtures("about.html");
 
         }));
         describe('checkAnswer', function () {
