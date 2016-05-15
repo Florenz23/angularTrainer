@@ -8,9 +8,9 @@ function MultiChoiceFlashCard(arrayValue,counter) {
 
     this.setAnswer = function (arrayValue) {
         for (var i = 0; i < arrayValue[3].length; i++) {
-            this.answer[i] = {
+            this.answers[i] = {
                 "value": arrayValue[3][i][1],
-                "false": arrayValue[3][i][0]
+                "correct": arrayValue[3][i][0]
             }
         }
     };
@@ -20,7 +20,7 @@ function MultiChoiceFlashCard(arrayValue,counter) {
 
     this.ini = function (arrayValue,counter) {
         this.question = arrayValue[2][0];
-        this.answer = [];
+        this.answers = [];
         this.setAnswer(arrayValue);
         this.setId(counter);
     };
@@ -41,6 +41,23 @@ function convertTrainerArray(trainerArray){
     }
     return objArray;
 };
+function shuffleArray(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
 
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
 
 

@@ -1,20 +1,43 @@
-<div>
-    <ul class="unstyled">
-        <li>
-            <strong class="question">{{ question.questionText }}</strong>
-            <ul class="unstyled" id="quest_{{$parent.$index}}">
-                <li ng-repeat="answer in question.answers">
-                    <label id ="labelId{{$index}}" class="isCorrect_{{answer.selected}}" for="quest_{{$parent.$index}}_answer_{{$index}}">
-                        <input ng-click="showResult()" type="radio" id="quest_{{$parent.$index}}_answer_{{$index}}"
-                               ng-model="answers[0]" value="{{ answer.answerText }}"
-                               name="quest_{{$parent.$index}}_answers"/>{{ answer.answerText }}</label>
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <button class="btn" type="submit" ng:click="showResult()">Submit</button>
-    <div class="well">
-        <p>you got {{ correctCount }} out of {{questions.length}} right</p>
+<div class="quizzler">
+    <div class="viewport">
+        <div class="quiz-section">
+
+            <header>
+                <div class="quiz-title">
+                    <img src="check/boot/images/g{{flashCard.id}}f.png" err-src="http://google.com/favicon.ico"/>
+                </div>
+
+            </header>
+
+            <div class="challenge">
+
+                <div class="question">
+                    <h3>{{ flashCard.question }}</h3>
+                </div>
+
+                <div ng-repeat="answer in flashCard.answers " class="repeat-wrap">
+                    <div class="input-group input-radio">
+                        <label id="labelId{{$index}}" class="isCorrect_{{answer.selected}}"
+                               for="quest_{{$parent.$index}}_answer_{{$index}}">
+                            <input ng-click="showResult()" type="radio" id="quest_{{$parent.$index}}_answer_{{$index}}"
+                                   ng-model="answers[0]" value="{{ answer.value }}"
+                                   name="quest_{{$parent.$index}}_answers"/>{{ answer.value }}</label>
+                    </div>
+                </div>
+
+                <div class="next-action clearfix">
+                    <button ng-click="nextFlashCard()" class="btn btn-success pull-right blue-btn">Next <i
+                            class="icon-chevron-right"></i></button>
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
+
 </div>
+
+
+
+

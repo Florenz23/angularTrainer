@@ -9,8 +9,8 @@ testArray["1002"] = new Array(
         "Frage"),
     new Array(
         new Array(true, "Antwort1"),
-        new Array(true, "Antwort2"),
-        new Array(true, "Antwort3"),
+        new Array(false, "Antwort2"),
+        new Array(false, "Antwort3"),
         new Array(false, "Antwort4")));
 testArray["1003"] = new Array(
     3,
@@ -19,8 +19,8 @@ testArray["1003"] = new Array(
         "Frage"),
     new Array(
         new Array(true, "Antwort1"),
-        new Array(true, "Antwort2"),
-        new Array(true, "Antwort3"),
+        new Array(false, "Antwort2"),
+        new Array(false, "Antwort3"),
         new Array(false, "Antwort4")));
 describe('boot_test', function () {
     objArray = convertTrainerArray(testArray);
@@ -52,20 +52,19 @@ describe('boot_test', function () {
             expect(objArray[0]).toBeDefined();
             expect(objArray[0].question).toBeDefined();
             expect(objArray[0].question).toEqual("Frage");
-            expect(objArray[0].answer[0].value).toEqual("Antwort1");
-            expect(objArray[0].answer[0].false).toEqual(true);
-            expect(objArray[0].answer[3].false).toEqual(false);
+            expect(objArray[0].answers[0].value).toEqual("Antwort1");
+            expect(objArray[0].answers[0].correct).toEqual(true);
+            expect(objArray[0].answers[3].correct).toEqual(false);
             expect(objArray[0].id).toEqual(1002);
         });
         it('check second object', function () {
             expect(objArray[1]).toBeDefined();
             expect(objArray[1].question).toBeDefined();
             expect(objArray[1].question).toEqual("Frage");
-            expect(objArray[1].answer[0].value).toEqual("Antwort1");
-            expect(objArray[1].answer[0].false).toEqual(true);
-            expect(objArray[1].answer[3].false).toEqual(false);
+            expect(objArray[1].answers[0].value).toEqual("Antwort1");
+            expect(objArray[1].answers[0].correct).toEqual(true);
+            expect(objArray[1].answers[3].correct).toEqual(false);
             expect(objArray[1].id).toEqual(1003);
         });
-
     });
 });
