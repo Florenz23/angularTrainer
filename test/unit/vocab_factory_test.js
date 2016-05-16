@@ -30,7 +30,7 @@ describe('Vocab Factory', function () {
                 FlashCardArray.push(obj);
             }
             Vocab._flashCards = FlashCardArray;
-            Vocab.init();
+            Vocab.iniTrainer();
         })
     )
     ;

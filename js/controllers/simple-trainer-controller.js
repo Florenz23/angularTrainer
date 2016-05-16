@@ -5,11 +5,12 @@ angular.module('vocabTrainer').controller('SimpleTrainerController', function ($
 
 
     $scope.iniTrainer = function () {
-        Vocab.chargeVocs(this.flashCards);
+        //Vocab.chargeVocs(this.flashCards);
         Vocab.iniTrainer();
         this.flashCard = Vocab.currentFlashCard;
         this.displayAnswer = false;
     };
+    $scope.iniTrainer();
 
     $scope.setEnterAction = function (userAnswer) {
         console.log($scope.displayAnswer);

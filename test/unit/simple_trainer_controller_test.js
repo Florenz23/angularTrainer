@@ -35,7 +35,7 @@ describe('vocabTrainer', function () {
                 FlashCardArray.push(obj);
             }
             Vocab._flashCards = FlashCardArray;
-            Vocab.init();
+            Vocab.iniTrainer();
             scope = $rootScope.$new();
             controller = $controller('SimpleTrainerController', {
                 '$scope': scope

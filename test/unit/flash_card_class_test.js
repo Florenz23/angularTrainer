@@ -21,9 +21,6 @@ describe('FlashCard Factory', function () {
         it('setStartPoolStatus should be defined', function () {
             expect(flashCard.setStartPoolStatus).toBeDefined();
         });
-        it('checkPoolStatus should be defined', function () {
-            expect(flashCard.checkPoolStatus).toBeDefined();
-        });
         it('check poolStatus ', function () {
             expect(flashCard.poolStatus).toEqual(1);
             ;
