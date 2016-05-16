@@ -12,4 +12,9 @@ angular.module('vocabTrainer').controller('MultipleChoiceController', function (
         $scope.flashCard = $scope.flashCards[$scope.startIndex];
         console.log($scope.flashCardCorrect);
     }
+}).directive('multiChoiceFlashCard', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'views/ranji_multi.html'
+    };
 });

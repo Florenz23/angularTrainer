@@ -62,5 +62,10 @@ angular.module('vocabTrainer').controller('AboutController', function ($scope, V
             return $scope.checkAnswer(userAnswer);
         }
     }
+}).directive('normalFlashCard', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'views/about.html'
+    };
 });
 
