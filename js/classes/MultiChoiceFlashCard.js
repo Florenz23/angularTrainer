@@ -37,6 +37,7 @@ function convertTrainerArray(trainerArray){
         counter++;
         counter = counter.toString();
         var obj = new MultiChoiceFlashCard(trainerArray[counter], counter);
+        obj = new ClassFlashCard(obj);
         objArray[i] = obj;
     }
     return objArray;

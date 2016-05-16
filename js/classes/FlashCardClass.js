@@ -6,17 +6,48 @@
 
 function ClassFlashCard(flashCardObject) {
     this.init = function(){
-        this.id = flashCardObject._id;
+        this.setId(flashCardObject);
         this.question = flashCardObject.question;
-        this.answer = flashCardObject.answer;
+        this.setAnswer(flashCardObject);
+        this.setAnswers(flashCardObject);
         this.poolStatus = this.setStartPoolStatus(flashCardObject.poolStatus);
-        this.lastRevision = flashCardObject.lastRevision;
+        this.setLastRevision(flashCardObject);
         this.setRight(flashCardObject);
         this.setWrong(flashCardObject);
         this.setRating(flashCardObject);
         this.calculateImportance();
     };
 
+
+    this.setId = function(object){
+        if (object._id){
+            this.id= object._id;
+        }
+        if (object.id){
+            this.id= object.id;
+        }
+    };
+    this.setAnswer = function(object){
+        if (object.answer){
+            this.answer = object.answer;
+        } else {
+            this.answer = false;
+        }
+    };
+    this.setAnswers = function(object){
+        if (object.answers){
+            this.answers = object.answers;
+        } else {
+            this.answers = false;
+        }
+    };
+    this.setLastRevision = function(object){
+        if (object.lastRevision){
+            this.lastRevision = object.lastRevision;
+        } else {
+            this.lastRevision = false;
+        }
+    };
 
     this.setRight = function (flashCardObject) {
         if (!isNaN(parseFloat(flashCardObject.right))) {

@@ -3,13 +3,63 @@ angular.module('vocabTrainer').controller('SimpleTrainerController', function ($
     $scope.flashCard = Vocab.currentFlashCard;
     $scope.displayAnswer = false;
 
-
+    var dbFlashCards = [
+        {
+            question: 'one',
+            answer: 'eins',
+            type: 'noun'
+        },
+        {
+            question: 'two',
+            answer: 'zwei',
+            type: 'adjective'
+        },
+        {
+            question: 'three',
+            answer: 'drei',
+            type: 'Adjective'
+        },
+        {
+            question: 'four',
+            answer: 'vier',
+            type: 'Adjective'
+        },
+        {
+            question: 'a',
+            answer: 'a',
+            type: 'Adjective'
+        },
+        {
+            question: 'a',
+            answer: 'a',
+            type: 'Adjective'
+        },
+        {
+            question: 'b',
+            answer: 'b',
+            type: 'Adjective'
+        },
+        {
+            question: 'c',
+            answer: 'c',
+            type: 'Adjective'
+        },
+    ];
+    var flashCards = new Array();
+    for (var i = 0; i < dbFlashCards.length; i++) {
+        var obj = new ClassFlashCard(dbFlashCards[i]);
+        flashCards.push(obj);
+    }
     $scope.iniTrainer = function () {
         //Vocab.chargeVocs(this.flashCards);
-        Vocab.iniTrainer();
+        var dbFlashCards = $scope.getFlashCards();
+        Vocab.iniTrainer(dbFlashCards);
         this.flashCard = Vocab.currentFlashCard;
         this.displayAnswer = false;
     };
+    $scope.getFlashCards = function(){
+       return flashCards;
+    }
     $scope.iniTrainer();
 
     $scope.setEnterAction = function (userAnswer) {

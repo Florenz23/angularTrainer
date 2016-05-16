@@ -29,8 +29,7 @@ describe('Vocab Factory', function () {
                 var obj = new ClassFlashCard(DbFlashCardArray[i]);
                 FlashCardArray.push(obj);
             }
-            Vocab._flashCards = FlashCardArray;
-            Vocab.iniTrainer();
+            Vocab.iniTrainer(FlashCardArray);
         })
     )
     ;

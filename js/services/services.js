@@ -2,58 +2,12 @@ angular.module('vocabTrainer')
 
     .factory('Vocab', function () {
 
-        var dbFlashCards = [
-            {
-                question: 'one',
-                answer: 'eins',
-                type: 'noun'
-            },
-            {
-                question: 'two',
-                answer: 'zwei',
-                type: 'adjective'
-            },
-            {
-                question: 'three',
-                answer: 'drei',
-                type: 'Adjective'
-            },
-            {
-                question: 'four',
-                answer: 'vier',
-                type: 'Adjective'
-            },
-            {
-                question: 'a',
-                answer: 'a',
-                type: 'Adjective'
-            },
-            {
-                question: 'a',
-                answer: 'a',
-                type: 'Adjective'
-            },
-            {
-                question: 'b',
-                answer: 'b',
-                type: 'Adjective'
-            },
-            {
-                question: 'c',
-                answer: 'c',
-                type: 'Adjective'
-            },
-        ];
-        var flashCards = new Array();
-        for (var i = 0; i < dbFlashCards.length; i++) {
-            var obj = new ClassFlashCard(dbFlashCards[i]);
-            flashCards.push(obj);
-        }
         var pool_size = 5;
         var review_interval = 5;
 
         function Vocab() {
-            this.iniTrainer = function (){
+            this.iniTrainer = function (controllerFlashCards){
+                this.deliverFlashCardsFromController(controllerFlashCards);
                 this.currentFlashCard = _.first(this.flashCards());
                 this.poolSize = pool_size;
                 this.reviewIntervall = review_interval;
@@ -61,6 +15,9 @@ angular.module('vocabTrainer')
             };
 
             this.currentFlashCard = null;
+            this.deliverFlashCardsFromController = function(flashCards){
+               this.controllerFlashCards = flashCards;
+            }
             this.sortByImportance = function (a, b) {
                 return parseFloat(b.importance) - parseFloat(a.importance);
             }
@@ -68,7 +25,7 @@ angular.module('vocabTrainer')
                 return this._flashCards || this.getFlashCards();
             };
             this.getFlashCards = function () {
-                this._flashCards = flashCards;
+                this._flashCards = this.controllerFlashCards;
                 return this._flashCards;
             };
             // grab the next flashCard in the list or wrap around to the start

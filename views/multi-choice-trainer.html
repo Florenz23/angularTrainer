@@ -26,8 +26,14 @@
                 </div>
 
                 <div class="next-action clearfix">
-                    <button ng-click="nextFlashCard()" class="btn btn-success pull-right blue-btn">Next <i
+                    <button ng-click="proceedToNextFlashCard()" class="btn btn-success pull-right blue-btn">Next <i
                             class="icon-chevron-right"></i></button>
+                </div>
+                <div>
+                    <p>right : {{flashCard.right}}</p>
+                    <p>wrong : {{flashCard.wrong}}</p>
+                    <p>rating : {{flashCard.rating}}</p>
+                    <p>importance : {{flashCard.importance}}</p>
                 </div>
 
             </div>

@@ -1,18 +1,18 @@
 describe('tabs', function () {
-    var scope, controller;
+    var scope, controller, Vocab;
 
     // load the tabs code
     beforeEach(module('vocabTrainer'));
 
     // load the templates
 
-    beforeEach(inject(function ($controller, $rootScope, $compile) {
+    beforeEach(inject(function ($controller, $rootScope, $injector) {
+        Vocab = $injector.get('Vocab');
         scope = $rootScope.$new();
         controller = $controller('MultiChoiceTrainerController', {
-            '$scope': scope
+            '$scope': scope,
         });
     }));
-
     describe('check the change of the class if an answer is selected', function () {
         beforeEach(function () {
             scope.flashCard = {
@@ -46,10 +46,11 @@ describe('tabs', function () {
             expect(answers[1].selected).toEqual('false');
         });
     });
-    describe('check nextFlashCard', function () {
+
+    describe('check markAnswer functions', function () {
         beforeEach(function () {
-            scope.flashCards = [{
-                "question": "Frage1",
+            scope.flashCard = {
+                "question": "Wyh is the sky blue?",
                 "answers": [
                     {
                         "value": "blah blah 1",
@@ -62,46 +63,33 @@ describe('tabs', function () {
                     {
                         "value": "blah blah 3",
                         "correct": false
-                    }
+                    },
                 ]
-            }, {
-                "question": "Frage2",
-                "answers": [
-                    {
-                        "value": "blah blah 1",
-                        "correct": true
-                    },
-                    {
-                        "value": "blah blah 2",
-                        "correct": false
-                    },
-                    {
-                        "value": "blah blah 3",
-                        "correct": false
-                    }]
-            }
-            ];
-            scope.flashCard = scope.flashCards[0];
+            };
         });
-        describe('nextFlashCard',function(){
-            it('should be defined', function () {
-                expect(scope.nextFlashCard).toBeDefined();
-            });
-            it('should be defined', function () {
-                expect(scope.flashCard.question).toEqual("Frage1");
-                scope.nextFlashCard();
-                expect(scope.flashCard.question).toEqual("Frage2");
-            });
+        it('markAnswerAsCorrect', function () {
+            spyOn(scope, 'acceptAnswer');
+            scope.answers[0] = "blah blah 1";
+            scope.showResult();
+            expect(scope.acceptAnswer).toHaveBeenCalled();
         });
-        describe('nextFlashCard',function(){
-            it('should be defined', function () {
-                expect(scope.nextFlashCard).toBeDefined();
-            });
-            it('should be defined', function () {
-                expect(scope.flashCard.question).toEqual("Frage1");
-                scope.nextFlashCard();
-                expect(scope.flashCard.question).toEqual("Frage2");
-            });
+        it('markAnswerAsWrong', function () {
+            spyOn(scope, 'denyAnswer');
+            scope.answers[0] = "blah blah 2";
+            var answers = scope.showResult();
+            expect(scope.denyAnswer).toHaveBeenCalled();
+        });
+    });
+    describe('proceedToNextFlashCard', function () {
+        it('should be defined', function () {
+            expect(scope.proceedToNextFlashCard).toBeDefined();
+        });
+        it('should jump no next flash card', function () {
+            var value1 = scope.flashCard.id;
+            scope.acceptAnswer();
+            scope.proceedToNextFlashCard();
+            var value2 = scope.flashCard.id;
+            expect(value1).not.toEqual(value2);
         });
     });
     describe('checkUsersAnswer', function () {
