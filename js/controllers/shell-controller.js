@@ -7,6 +7,7 @@ angular.module('vocabTrainer').controller('ShellController', function ($scope) {
     };
 
     $scope.$on('loadedController', function (event, section) {
+        console.log(section);
         console.log('setting active tab to: ' + section);
         $scope.activeTab = section;
     });

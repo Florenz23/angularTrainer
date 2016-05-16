@@ -1,5 +1,5 @@
-angular.module('vocabTrainer').controller('AboutController', function ($scope, Vocab) {
-    $scope.$emit('loadedController', 'trainer');
+angular.module('vocabTrainer').controller('SimpleTrainerController', function ($scope, Vocab) {
+    $scope.$emit('loadedController', 'simple-trainer');
     $scope.flashCard = Vocab.currentFlashCard;
     $scope.displayAnswer = false;
 
@@ -65,7 +65,7 @@ angular.module('vocabTrainer').controller('AboutController', function ($scope, V
 }).directive('normalFlashCard', function() {
     return {
         restrict: 'E',
-        templateUrl: 'views/about.html'
+        templateUrl: 'views/simple-trainer.html'
     };
 });
 

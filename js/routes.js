@@ -6,28 +6,20 @@ angular.module('vocabTrainer')
     .config(function ($routeProvider) {
         $routeProvider.
             when('/', {
-                controller: 'MainController',
-                templateUrl: 'views/words.html'
-            }).
-            when('/about', {
-                controller: 'AboutController',
-                templateUrl: 'views/about.html'
+                controller: 'TrainerController',
+                templateUrl: 'views/trainer.html'
             }).
             when('/trainer', {
                 controller: 'TrainerController',
                 templateUrl: 'views/trainer.html'
             }).
-            when('/mc', {
-                controller: 'MultipleChoiceController',
-                templateUrl: 'views/multi_choice.html'
+            when('/simpleTrainer', {
+                controller: 'SimpleTrainerController',
+                templateUrl: 'views/simple-trainer.html'
             }).
-            when('/words/:word', {
-                controller: 'WordController',
-                templateUrl: 'views/word.html'
-            }).
-            when('/ranji_multi', {
-                controller: 'QuizController',
-                templateUrl: 'views/ranji_multi.html'
+            when('/multiChoiceTrainer', {
+                controller: 'MultiChoiceTrainerController',
+                templateUrl: 'views/multi-choice-trainer.html'
             })
     });
 

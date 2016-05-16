@@ -1,4 +1,5 @@
-angular.module('vocabTrainer').controller('QuizController', function ($scope) {
+angular.module('vocabTrainer').controller('MultiChoiceTrainerController', function ($scope) {
+    $scope.$emit('loadedController', 'multi-choice-trainer');
     "use strict";
     $scope.shuffleFlashCardAnswers = function(){
         $scope.flashCard.answers = shuffleArray($scope.flashCard.answers);
@@ -57,4 +58,9 @@ angular.module('vocabTrainer').controller('QuizController', function ($scope) {
     $scope.random = function() {
         return 0.5 - Math.random();
     }
+}).directive('multiChoiceFlashCard', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'views/multi-choice-trainer.html'
+    };
 });

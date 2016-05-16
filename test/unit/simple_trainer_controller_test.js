@@ -10,7 +10,7 @@ describe('vocabTrainer', function () {
         module('vocabTrainer');
     });
 
-    describe('AboutController', function () {
+    describe('SimpleTrainerController', function () {
         beforeEach(inject(function ($rootScope, $controller,$injector) {
             Vocab = $injector.get('Vocab');
             DbFlashCardArray = [
@@ -37,7 +37,7 @@ describe('vocabTrainer', function () {
             Vocab._flashCards = FlashCardArray;
             Vocab.init();
             scope = $rootScope.$new();
-            controller = $controller('AboutController', {
+            controller = $controller('SimpleTrainerController', {
                 '$scope': scope
             });
             //fixture = readFixtures("about.html");

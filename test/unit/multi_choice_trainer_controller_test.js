@@ -8,7 +8,7 @@ describe('tabs', function () {
 
     beforeEach(inject(function ($controller, $rootScope, $compile) {
         scope = $rootScope.$new();
-        controller = $controller('QuizController', {
+        controller = $controller('MultiChoiceTrainerController', {
             '$scope': scope
         });
     }));
